@@ -9,7 +9,7 @@ app.use(express.urlencoded({
 app.use(fileUpload())
 app.use(express.static('../View'))
 app.get('/', (req, res) => {
-    res.sendFile('index.html')
+    res.sendFile('./index.html')
 })
 app.post('/search', (req, res) => {
     res.write('searching for ' + req.body.key +':\n')
