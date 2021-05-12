@@ -21,4 +21,4 @@ app.post('/search', (req, res) => {
     }
     res.end()
 })
-app.listen(9876, ()=>console.log("server started on port 9876"))
+app.listen(8080, ()=>console.log("server started on port 8080"))
