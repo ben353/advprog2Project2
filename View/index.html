@@ -2,22 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Anomaly Detection Website</title>
+    <title>Anomaly Detection Server</title>
 </head>
 <body>
 <form action="/search" method="post" enctype="multipart/form-data" name="searchForm" type="result">
     <table>
         <tr>
-            <td><input type="text" name="key"></td>
-            <td>מילת חיפוש</td>
+            <td>Choose an algorithm type:</td>
+            <td>
+                <nav>
+                    <ul>
+                        <li>Regression_Based_Algo</li>
+                        <li>Hybrid_Algo</li>
+                    </ul>
+                </nav>
+
+            </td>
         </tr>
         <tr>
-            <td><input type="file" name="text_file"></td>
-            <td>קובץ טקסט</td>
+            <td>Normal Csv File:</td>
+            <td><input type="file" name="normal_csv_file"></td>
+            <td>Anomaly Csv File:</td>
+            <td><input type="file" name="anomaly_csv_file"></td>
         </tr>
         <br>
     </table>
-    <input type="submit" value="שלח קובץ">
+    <input type="submit" value="upload">
 </form>
 <br>
 <iframe name="result" width="80%" height="500"></iframe>
