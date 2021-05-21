@@ -17,7 +17,7 @@ app.post('/detect', (req, res) => {
     if(req.files) {
         var normal_file = req.files.normal_csv_file
         var anomaly_file = req.files.anomaly_csv_file
-        var result = model.putFunctionHere(normal_file, anomaly_file ,chosenAlgo)
+        var result = model.detect(normal_file, anomaly_file ,chosenAlgo)
         res.write(result)
     }
     res.end()
