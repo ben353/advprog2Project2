@@ -13,11 +13,11 @@ app.get('/', (req, res) => {
 })
 app.post('/detect', (req, res) => {
     res.write('searching for ' + req.body.key +':\n')
-    /*var chosenAlgo = req.*/ //look into it later
+    var chosenAlgo = req.body.algorithms //look into it later
     if(req.files) {
         var normal_file = req.files.normal_csv_file
         var anomaly_file = req.files.anomaly_csv_file
-        /*var result = model.putFunctionHere(normal_file, anomaly_file)*/
+        var result = model.putFunctionHere(normal_file, anomaly_file ,chosenAlgo)
         res.write(result)
     }
     res.end()
