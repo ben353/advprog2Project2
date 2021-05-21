@@ -5,18 +5,15 @@
     <title>Anomaly Detection Server</title>
 </head>
 <body>
-<form action="/search" method="post" enctype="multipart/form-data" name="searchForm" type="result">
+<form action="/detect" method="post" enctype="multipart/form-data" name="searchForm" type="result">
     <table>
         <tr>
             <td>Choose an algorithm type:</td>
             <td>
-                <nav>
-                    <ul>
-                        <li>Regression_Based_Algo</li>
-                        <li>Hybrid_Algo</li>
-                    </ul>
-                </nav>
-
+                <select type= "" name="algorithms" id="algorithms">
+                    <option value="Regression">Regression Based</option>
+                    <option value="Hybrid">Hybrid</option>
+                </select>
             </td>
         </tr>
         <tr>
