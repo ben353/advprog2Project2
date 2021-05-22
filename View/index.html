@@ -1,4 +1,4 @@
-<!DOCTYPE hmtl>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,9 +24,14 @@
         </tr>
         <br>
     </table>
-    <input type="submit" value="upload">
+    <input type="submit" value="upload" onclick="myFunction()">
 </form>
 <br>
-<iframe name="result" width="80%" height="500"></iframe>
+<iframe id="anomalies" width="80%" height="500"></iframe>
+<!--<script>
+    var txt = '{"name":"John", "age":30, "city":"New York"}'
+    var obj = JSON.parse(txt)
+    document.getElementById("anomalies").innerHTML = obj.name + ", " + obj.age + "," +obj.city;
+</script>-->
 </body>
 </html>
