@@ -1,7 +1,6 @@
 function detect(normal_file, anomaly_file ,algo){
     var normal = normal_file.data.toString()
     var anomaly = anomaly_file.data.toString()
-    console.log(algo)
     if (algo == "Regression")
     {
 
@@ -16,6 +15,8 @@ function detect(normal_file, anomaly_file ,algo){
     }                                                                      //delete
     //continue later
     //the func returns json file with the anomalies that were detected
+    var text = {"First":"Hello", "Second":"World"}
+    return JSON.stringify(text)
 }
 
 module.exports.detect = detect
