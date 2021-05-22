@@ -12,14 +12,14 @@ app.get('/', (req, res) => {
     res.sendFile('./index.html')
 })
 app.post('/detect', (req, res) => {
-    res.write('searching for ' + req.body.key +':\n')
+    res.write('The anomalies which were detected in the flight file info are the following:\n')
     var chosenAlgo = req.body.algorithms //look into it later
     if(req.files) {
         var normal_file = req.files.normal_csv_file
         var anomaly_file = req.files.anomaly_csv_file
         var result = model.detect(normal_file, anomaly_file ,chosenAlgo)
         res.write(result)
+        res.end()
     }
-    res.end()
 })
 app.listen(8080, ()=>console.log("server started on port 8080"))
