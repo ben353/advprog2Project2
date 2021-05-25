@@ -59,8 +59,8 @@ app.post('/detect', (req, res) => {
         var normal_file = req.files.normal_csv_file
         var anomaly_file = req.files.anomaly_csv_file
         var result = model.detect(normal_file, anomaly_file ,chosenAlgo)
-        //res.write(result)
-        res.write('{"name":"John", "age":30, "city":"New York"}')
+        // JSON.parse(txt) converts a text in the form of JSON into the form of txt
+        res.write(JSON.parse(result))
         res.end()
     }
 })

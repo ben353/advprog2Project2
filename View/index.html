@@ -24,15 +24,16 @@
         </tr>
         <br>
     </table>
-    <input type="submit" value="upload" onclick="myFunction()">
+    <input type="submit" value="upload">
 </form>
 <br>
 <p style="font-size:50px;">The anomalies:</p>
 <iframe name="result" width="80%" height="500"></iframe>
 <!--<script>
     var txt = '{"name":"John", "age":30, "city":"New York"}'
+    // JSON.parse(txt) converts a text in the form of JSON into the form of txt
     var obj = JSON.parse(txt)
-    document.getElementById("anomalies").innerHTML = obj.name + ", " + obj.age + "," +obj.city;
+    document.getElementByName("result").innerHTML = obj.name + ", " + obj.age + "," +obj.city;
 </script>-->
 </body>
 </html>
