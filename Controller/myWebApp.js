@@ -53,7 +53,6 @@ app.get('/', (req, res) => {
 })
 
 app.post('/detect', (req, res) => {
-    //res.write('The anomalies which were detected in the flight file info are the following:\n')
     var chosenAlgo = req.body.algorithms
     if(req.files) {
         var normal_file = req.files.normal_csv_file
