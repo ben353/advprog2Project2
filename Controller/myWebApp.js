@@ -53,13 +53,16 @@ app.get('/', (req, res) => {
 })
 
 app.post('/detect', (req, res) => {
-    var chosenAlgo = req.body.algorithms
+    // res.write('The anomalies which were detected in the flight file info are the following:\n')
+    var chosenAlgo = req.body.algorithms //look into it later
     if(req.files) {
         var normal_file = req.files.normal_csv_file
         var anomaly_file = req.files.anomaly_csv_file
+        console.log("before\n")
         var result = model.detect(normal_file, anomaly_file ,chosenAlgo)
-        // JSON.parse(txt) converts a text in the form of JSON into the form of txt
-        res.write(JSON.parse(result))
+        console.log("after")
+        res.write(result)
+        //res.write('{"cars":[ {"name":"Ford" , "price":100}, {"name":"BMW", "price":200}, {"name":"Fiat", "price":300} ]}')
         res.end()
     }
 })
