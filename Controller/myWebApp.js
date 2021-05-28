@@ -52,15 +52,16 @@ app.get('/', (req, res) => {
     res.sendFile('./index.html')
 })
 
-app.post('/detect', (req, res) => {
+app.post('/detect', async(req, res) => {
     // res.write('The anomalies which were detected in the flight file info are the following:\n')
     var chosenAlgo = req.body.algorithms //look into it later
     if(req.files) {
         var normal_file = req.files.normal_csv_file
         var anomaly_file = req.files.anomaly_csv_file
         console.log("before\n")
-        var result = model.detect(normal_file, anomaly_file ,chosenAlgo)
+        var result = await model.detect(normal_file, anomaly_file ,chosenAlgo)
         console.log("after")
+        console.log("result=" + result)
         res.write(result)
         //res.write('{"cars":[ {"name":"Ford" , "price":100}, {"name":"BMW", "price":200}, {"name":"Fiat", "price":300} ]}')
         res.end()
