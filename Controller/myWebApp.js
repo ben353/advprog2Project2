@@ -58,11 +58,11 @@ app.post('/detect', async(req, res) => {
     if(req.files) {
         var normal_file = req.files.normal_csv_file
         var anomaly_file = req.files.anomaly_csv_file
-        console.log("before\n")
+        //console.log("before\n")
         var result = await model.detect(normal_file, anomaly_file ,chosenAlgo)
-        console.log("after")
-        console.log("result=" + result)
-        res.write(result)
+        //console.log("after")
+        //console.log("result=" + JSON.stringify(result.data))
+        res.write(JSON.stringify(result.data))
         //res.write('{"cars":[ {"name":"Ford" , "price":100}, {"name":"BMW", "price":200}, {"name":"Fiat", "price":300} ]}')
         res.end()
     }

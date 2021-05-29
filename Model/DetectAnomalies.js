@@ -3,11 +3,11 @@ async function detect(normal_file, anomaly_file ,algo){
     var anomaly = anomaly_file.data.toString()
     //var net = require('net');
     const axios = require('axios').default;
-    var host = 'localhost';
-    var port = 7550;
+    //var host = 'localhost';
+    //var port = 7550;
     //var socket = new net.Socket();
     // socket.on('data', (data) => {
-    console.log("in\n")
+    //console.log("in\n")
     //    console.log(`${data}`);
     //    socket.destroy();
     // });
@@ -32,9 +32,11 @@ async function detect(normal_file, anomaly_file ,algo){
     
     
     var url = "http://localhost:7550/"
-    return await axios.post(url, send).then(function (response) {
+    return await axios.post(url, send).then((response) => {
         return response
-      })
+      }, (error) => {
+        console.log(error.toString());
+      });
 
 
 

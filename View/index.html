@@ -3,38 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Anomaly Detection Server</title>
+  
 </head>
 <body>
     <p style="font-family:verdana; font-size:40px; text-align:center;">Anomaly Detection Server</p>
 <form action="/detect" method="post" enctype="multipart/form-data" name="anomalyDetectionForm" target="result">
-    
-    <fieldset style="width:400px; margin:auto"  text-align="center" >
-        <legend>Settings</legend>
-    <table>
-       
-            <label>Choose an algorithm type: </label>
-            
-                <select type="text" name="algorithms" id="algorithms">
-                    <option value="Regression">Regression Based</option>
-                    <option value="Hybrid">Hybrid</option>
-                </select>
-     
-                <br><br>
-            <label>Normal Csv File: </label>
-            <input type="file" accept=".csv" name="normal_csv_file"><br><br>
+    <body>
+        <fieldset style="width:400px; margin:auto"  text-align="center" >
+            <legend>Settings</legend>
+        <table>
+        
+                <label>Choose an algorithm type: </label>
+                
+                    <select type="text" name="algorithms" id="algorithms">
+                        <option value="Regression">Regression Based</option>
+                        <option value="Hybrid">Hybrid</option>
+                    </select>
+        
+                    <br><br>
+                <label>Normal Csv File: </label>
+                <input type="file" accept=".csv" name="normal_csv_file"><br><br>
 
-            <label>Anomaly Csv File: </label>
-            <input type="file" accept=".csv" name="anomaly_csv_file"><br><br>
-          
-       
-    </table>
-    <input type="submit" value="upload"  text-align="center" id="upload"   style="width:100px;margin:0 50%;position:relative;left:-50px;">
-    </fieldset>
+                <label>Anomaly Csv File: </label>
+                <input type="file" accept=".csv" name="anomaly_csv_file"><br><br>
+            
+        
+        </table>
+        <input type="submit" value="upload"  text-align="center" id="upload" style="width:100px;margin:0 50%;position:relative;left:-50px;">
+        </fieldset>
+    </body>
 </form>
 <br>
+<script>
+    function parseJson(rawJson) {
+        myObj = JSON.parse(rawJson);
+        len = myObj.vectorAnomalies.length;
+        var str = "";
+        for (i=0; i < len;str += myObj.vectorAnomalies[i].timeStep + "\tDescription: " + myObj.vectorAnomalies[i].description + "\r\n",  i++);
+        return str;
+    }
+
+    function createElementMY(){
+        var doc = document.getElementById('container');
+        var ifrDoc = doc.contentDocument;
+        var body = ifrDoc.documentElement.getElementsByTagName('body');
+        var rawJsonElement = body[0].getElementsByTagName('pre')[0];
+        var rawJson = rawJsonElement.innerText;
+        rawJsonElement.innerText = parseJson(rawJson);
+    }
+
+    function onLoadHandler(){
+        createElementMY();
+    } 
+</script>
 <fieldset style="width:80%; margin:auto">
     <legend>The anomalies</legend>
-<iframe name="result" width="100%" height="500" scrolling="auto"></iframe>
+<iframe name="result" width="100%" height="500" id="container" onload="onLoadHandler()">
+</iframe>
 </fieldset>
 </body>
 </html>
