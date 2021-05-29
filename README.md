@@ -32,7 +32,9 @@ node npm via this link:(plz add)
 c++ server via this link:(plz add)
 
 #### 4.Further Documentation
-plz add
+The UML file which represents the connection between the different structures in the project is available via this link: 
+https://github.com/ben353/advprog2Project2/files/6565365/AnomalyDetectionWebAppUML.pdf
+
 
 #### 5.Video 
 Link to the video that shows the user stories: (add plz)
