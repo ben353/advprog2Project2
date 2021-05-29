@@ -18,7 +18,7 @@ node npm via this link:(plz add)
 c++ server via his link:(plz add)
 
 4:Further Documentation
-Link to documentation about the main classes: https://lucid.app/lucidchart/invitations/accept/inv_61087e73-214e-485b-8a3f-a172e1a73110?viewport_loc=-3211%2C-550%2C5490%2C2359%2C0_0 access with these details: Full name: Tomer Aharoni, gmail: tagopd@gmail.com, password: 1234567890
+(plz add)
 
 5:  Video 
 Link to the video that shows the user stories: (add plz)
