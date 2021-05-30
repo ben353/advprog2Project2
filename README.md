@@ -26,10 +26,18 @@ The file in the View folder is index.html which is charge of displaying the visu
 #### 3.Prerequisite
 Pre-aquired programs to be installed before initial running:
 
-Javascript Library:
-node npm via this link:(plz add)
+## Javascript Library:
+Node npm via this link:https://code.visualstudio.com/docs/nodejs/nodejs-tutorial
+After install on your vsc, write these in the terminal:
+1.) npm i express- in order to install the express library.
+2.) npm i express-fileupload- in order to install the neccessary fileupload library.
+3.) node myWebApp.js- in order to run the main server in parallel to the c++ server, on localhost:8080.
 
-c++ server via this link:(plz add)
+## Cpp Server for the project:
+C++ server via this link:https://github.com/ben353/CppServerForProject2
+After downloading the files, run them through linux using ubuntu on your vsc and write these in the terminal in parallel to the run of the js server:
+1.) g++ -pthread main.cpp anomaly_detection_util.cpp HybridAnomalyDetector.cpp minCircle.cpp SimpleAnomalyDetector.cpp timeseries.cpp CLI.cpp Server.cpp- in order to compile the server.
+2.) ./a.out- in order to run the server on localhost:7550. 
 
 #### 4.Further Documentation
 The UML file which represents the connection between the different structures in the project is available via this link: 
