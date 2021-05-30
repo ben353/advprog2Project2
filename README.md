@@ -45,4 +45,4 @@ https://github.com/ben353/advprog2Project2/files/6565365/AnomalyDetectionWebAppU
 
 
 #### 5.Video 
-Link to the video that shows the user stories: (add plz)
+Link to the video that shows the user stories: https://youtu.be/9lpEeVVw1mw
